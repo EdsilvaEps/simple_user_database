@@ -68,10 +68,12 @@ class PacienteController extends Controller
         $model = new CreatePacienteForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            $model = $model->save();
-            if($model != null){
+            if($model->register()){
               Yii::$app->session->setFlash('success', 'Cliente cadastrado');
               return $this->redirect(['paciente/index']);
+            } else {
+              Yii::$app->session->setFlash('error', 'Cliente não pôde ser cadastrado');
+              return $this->redirect(['paciente/create']);
             }
 
         }

@@ -7,10 +7,10 @@
   use DateTime;
 
   /**
-  * validação do formulario de criação do cliente
+  * validação do formulario de criação do paciente
   */
 
-  class CreatePacienteForm extends Model{
+  class CreatePacienteForm extends Paciente{
     public $nome;
     public $cpf;
     public $cnh;
@@ -40,7 +40,6 @@
     public function attributeLabels()
     {
         return [
-            'pacienteID' => 'Paciente ID',
             'nome' => 'Nome',
             'cpf' => 'CPF',
             'cnh' => 'CNH',
@@ -52,22 +51,22 @@
         ];
     }
 
-    public function save(){
+    public function register(){
 
       $nasc = DateTime::createFromFormat('d/m/Y',$this->nascimento);
       $nasc = $nasc->format('Y-m-d');
-      $cliente = new Paciente();
-      $cliente->nome = $this->nome;
-      $cliente->cpf  = $this->cpf;
-      $cliente->cnh  = $this->cnh;
-      $cliente->identidade = $this->identidade;
-      $cliente->emissor = $this->emissor;
-      $cliente->nascimento = $nasc;
-      $cliente->criado_em = $this->criado_em;
-      $cliente->contato = $this->contato;
+      $paciente = new Paciente();
+      $paciente->nome = $this->nome;
+      $paciente->cpf  = $this->cpf;
+      $paciente->cnh  = $this->cnh;
+      $paciente->identidade = $this->identidade;
+      $paciente->emissor = $this->emissor;
+      $paciente->nascimento = $nasc;
+      $paciente->criado_em = $this->criado_em;
+      $paciente->contato = $this->contato;
 
-      return $cliente->save()  ? $cliente : null;
-      
+      return $paciente->save()  ? $paciente : null;
+
     }
 
   }
