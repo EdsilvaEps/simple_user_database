@@ -29,11 +29,6 @@ $config = [
     ],
     'params' => $params,
 
-    'controllerMap' => [
-        'heroku' => [
-            'class' => 'purrweb\heroku\HerokuGeneratorController',
-        ],
-    ],
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
