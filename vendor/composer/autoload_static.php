@@ -34,6 +34,7 @@ class ComposerStaticInit1b5e4a2393a0a18e936be12493f37c33
         ),
         'p' => 
         array (
+            'purrweb\\heroku\\' => 15,
             'phpDocumentor\\Reflection\\' => 25,
         ),
         'c' => 
@@ -120,6 +121,10 @@ class ComposerStaticInit1b5e4a2393a0a18e936be12493f37c33
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'purrweb\\heroku\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/purrweb/yii2-heroku',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

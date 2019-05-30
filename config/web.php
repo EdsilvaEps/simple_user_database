@@ -43,6 +43,12 @@ $config = [
             ],
         ],
         'db' => $db,
+
+        'controllerMap' => [
+            'heroku' => [
+                'class' => 'purrweb\heroku\HerokuGeneratorController',
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
